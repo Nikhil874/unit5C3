@@ -31,11 +31,11 @@ export const Home = () => {
           "give handleSort function to this component, that sorts books"
         }
       />
-   <h2>Check</h2>
+  
       <Main className="mainContainer">
         {
         allbooks.map((e)=>{
-         return <BookCard details={e}></BookCard>
+         return <BookCard id={e.id} imageUrl={e.imageUrl} title={e.title} price={e.price} ></BookCard>
         })
         
         
@@ -48,6 +48,7 @@ export const Home = () => {
             show in books Card.
         */}
       </Main>
+      <h2>Check</h2>
     </div>
   );
 };

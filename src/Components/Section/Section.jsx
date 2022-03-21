@@ -48,7 +48,7 @@ export const Section = () => {
       <Main className="sectionContainer">
         {/* SHow same BookCard component here, just like homepage but with books only belong to this Section */}
         {allbooks.map((e)=>{
-        return  <BookCard items={e}></BookCard>
+        return  <BookCard id={e.id} imageUrl={e.imageUrl} title={e.title} price={e.price} ></BookCard>
         })}
       </Main>
     </>
