@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const Main = styled.div`
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
     /* Apply some responsive styling to children */
   `;
 export const Home = () => {

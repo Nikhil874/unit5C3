@@ -6,6 +6,8 @@ import { SortAndFilterButtons } from "../SortAndFilterButtons/SortAndFilterButto
 import styled from "styled-components";
 const Main = styled.div`
 /* Same as Homepage */
+display: flex;
+  flex-wrap: wrap;
 `;
 export const Section = () => {
   // you will receive section name from URL here.

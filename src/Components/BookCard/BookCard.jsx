@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const SingleBook = styled.div`
 /* Apply some responsive styling to children */
-margin-top: 10px;
+margin: 10px;
 `;
 
 export const BookCard = ({ id, imageUrl, title, price }) => {
@@ -32,7 +32,10 @@ return(<SingleBook>
 <Link to={`/bookdetailspage/${id}`}>
   <div className="bookCard">
     <h2 className="title" >{title}</h2>
-  <img src={imageUrl} alt="" />
+  <img src={imageUrl} alt="" style={{
+    "height":"250px",
+    "width":"250px"
+  }} />
   <p className="price">{price}</p>
 
 
