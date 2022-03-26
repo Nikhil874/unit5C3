@@ -35,7 +35,14 @@ export const Section = () => {
 
 },[name]);
 
-
+const [filterSort,setFilter]=useState({
+  parameter:"",
+  value:null,
+})
+const handleSort=(parameter,value)=>{
+setFilter({parameter,value})
+// console.log(filterSort);
+}
 
   return (
     <>
@@ -45,11 +52,25 @@ export const Section = () => {
           name//   Show section name heren 
         }
       </h2>
-      <SortAndFilterButtons handleSort={"give sorting function to component"} />
+      <SortAndFilterButtons handleSort={
+        handleSort} />
 
       <Main className="sectionContainer">
         {/* SHow same BookCard component here, just like homepage but with books only belong to this Section */}
-        {allbooks.map((e)=>{
+         {allbooks.sort((a,b)=>{
+          if(filterSort.parameter=="title"&&filterSort.value==1){
+            return a["title"].localeCompare(b["title"]);
+          }else if(filterSort.parameter=="title"&&filterSort.value==-1){
+            return b["title"].localeCompare(a["title"]);
+          }else if(filterSort.parameter=="price"&&filterSort.value==1){
+            return a["price"]-b["price"];
+          }else if(filterSort.parameter=="price"&&filterSort.value==-1){
+            return b["price"]-a["price"];
+          }
+        })
+        
+        
+        .map((e)=>{
         return  <BookCard id={e.id} imageUrl={e.imageUrl} title={e.title} price={e.price} ></BookCard>
         })}
       </Main>
