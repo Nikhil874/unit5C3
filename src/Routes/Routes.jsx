@@ -13,6 +13,7 @@ export const AllRoutes = () => {
         <Route exact path="/" element={<Home />} />
        <Route  path={"/section/:name"} element={<Section/>}/>
        <Route  path={"/bookdetailspage/:id"} element={<BookDetailsPage/>}/>
+       <Route path={"*"} element={<NotFound/>}></Route>
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,6 +6,7 @@ export const BookDetailsPage = () => {
   // Get book details based on ID whenever user lands on the page
   // ID will come from route
   const {id}=useParams();
+  const navigate=useNavigate();
 const [book,setBook]=useState({
   id:"",
   reviews:[]
@@ -16,6 +17,8 @@ const [book,setBook]=useState({
      axios.get(`http://localhost:8080/books/${id}`).then((res)=>{
        setBook(res.data);
     
+     }).catch((e)=>{
+       return navigate("*");
      })
 
   },[]);
